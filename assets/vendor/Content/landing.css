@@ -1,0 +1,60 @@
+﻿body {
+}
+.top-bar {
+    min-height: 60px;
+    background-image: -webkit-gradient(linear, left top, right top, from(#00C9B6 ), to(#5C2799));
+    background-image: -webkit-linear-gradient(left, #00C9B6  0%, #5C2799 100%);
+    background-image: -o-linear-gradient(left, #00C9B6  0%, #5C2799 100%);
+    background-image: linear-gradient(90deg, #00C9B6  0%, #5C2799 100%);
+}
+    .top-bar ul {
+        background: unset;
+    }
+    .top-bar img {
+        height: 40px;
+        cursor: pointer;
+    }
+.menu > li > a {
+    color: #fff;
+    margin-top: 10px;
+}
+.width-100{
+    width: 100%;
+}
+.nav-menu {
+    font-size: 18px;
+    color: #fff;
+}
+.content-body {
+    margin: 30px auto;
+    padding: 0 10px;
+}
+.fixed-container {
+    padding: 0 10px;
+    text-align: justify;
+}
+.footer {
+    width: 100% !important;
+}
+.btn-signup {
+    background: rgb(79, 102, 146);
+    border-radius: 3px;
+    color: #fff;
+    padding: 10px 10px;
+}
+    .btn-signup:hover {
+        padding: 15px 15px;
+        color: #fff;
+    }
+
+@media screen and (min-width:480px) {
+    .hide-large {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .hide-mobile{
+        display: none;
+    }
+}
