@@ -28,11 +28,11 @@ if (isset($_POST['signup'])) {
             //rebuild form data
             $postdata = http_build_query(
                 array(
-                    'username' => 'aboajahemmanuel@gmail.com',
-                    'password' => 'goodboy',
+                    'username' => '********@***.***',
+                    'password' => '********',
                     'message' => 'VerificationCode: '.$verification_code.' ',
                     'mobiles' => $phone,
-                    'sender' => 'LoanApp',
+                    'sender' => '******',
                 )
             );
             //prepare a http post request
