@@ -86,7 +86,7 @@ function editProfilePic($profile_pic) {
 }
 
 /**
- * Get last review by user
+ * Get last review submitted by user
  */
 function rev() {
     global $con;
@@ -121,18 +121,46 @@ function totalReviews() {
  */
 function allReview() {
     global $con;
-
     $user_id = $_SESSION['id'];
-    $sql = "SELECT * FROM review WHERE user_id = '$user_id' ";
+
+    if (isset($_GET['page'])) {
+        $page = $_GET['page'];
+        $start = ($page * 3) - 3;
+        $sql = "SELECT * FROM review WHERE user_id = '$user_id' LIMIT $start, 3  ";
+    } else {
+        $sql = "SELECT * FROM review WHERE user_id = '$user_id' LIMIT 0, 3 ";
+    }
+        $result = mysqli_query($con, $sql);
+        return $result;
+
+}
+
+/**
+ * For pagination on review_history
+ */
+function reviewPagination() {
+    global $con;
+
+    // Get logged-in user id
+    $user_id = $_SESSION['id'];
+
+    $sql = "SELECT COUNT(*) from review WHERE user_id = '$user_id' ";
     $result = mysqli_query($con, $sql);
-    return $result;
+    $row = mysqli_fetch_assoc($result);
+    $total = array_shift($row);
+
+    $divide = $total / 3;
+    $paginate = ceil($divide);
+
+    return $paginate;
+
 }
 
 
 /**
  * Get signle review by user
  */
-function details() {
+function revieDetails() {
     global $con;
 
     $id = $_GET['id'];

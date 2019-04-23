@@ -4,7 +4,7 @@
     confirm_login();
 
     // review details
-    $row = details();
+    $row = revieDetails();
     // Get net pay
     $user = netPay($row['user_id']);
 ?>
@@ -142,7 +142,7 @@
                     </tbody>
                   </table>
                   <div class="invoice-print">
-                    <a href="review_history.php"><i data-feather="user"></i>Back</a>
+                    <a href="<?php echo $_SERVER['HTTP_REFERER'] ?>"><i data-feather="user"></i>Back</a>
                   </div>
                 </div>
               </div>

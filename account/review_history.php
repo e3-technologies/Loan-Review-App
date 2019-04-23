@@ -49,6 +49,32 @@
                   </div>
 
                 <?php endwhile; ?>
+
+                <?php $paginate = reviewPagination(); ?>
+
+                <?php if (totalReviews() > 3) : ?>
+                <div class="pagination-list text-center">
+                  <nav class="navigation pagination">
+                    <div class="nav-links">
+                      <a class="prev page-numbers" href="#"><i class="fas fa-angle-left"></i></a>
+
+                        <?php for ($i=1; $i <= $paginate; $i++) : ?>
+                            <?php if ($i == $_GET['page']) : ?>
+                                <a class="page-numbers current" href="review_history.php?page=<?= $i; ?>"><?= $i; ?></a>
+                            <?php elseif ($_GET['page'] == 0) : ?>
+                                <a class="page-numbers current" href="review_history.php?page=1"><?= $i; ?></a>
+                            <?php else : ?>
+                                <a class="page-numbers" href="review_history.php?page=<?= $i; ?>"><?= $i; ?></a>
+                            <?php endif; ?>
+                        <?php endfor; ?>
+
+                          <a class="next page-numbers" href="#"><i class="fas fa-angle-right"></i></a>
+                        </div>
+                      </nav>
+                    </div>
+                    <?php endif; ?>
+
+
             <?php else: ?>
                 <h4><a href="job-details.html">No Result Found</a></h4>
             <?php endif; ?>

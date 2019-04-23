@@ -22,7 +22,7 @@
     <ul>
         <li class="<?php if($page == 'dashboard'){echo 'active';} ?>"><i class="fas fa-home"></i><a href="index.php">Dashboard</a></li>
         <li class="<?php if($page == 'edit'){echo 'active';} ?>"><i class="fas fa-user"></i><a href="edit-profile.php">Edit Profile</a></li>
-        <li class="<?php if($page == 'history'){echo 'active';} ?>"><i class="fas fa-list"></i><a href="review_history.php">Review History</a></li>
+        <li class="<?php if($page == 'history'){echo 'active';} ?>"><i class="fas fa-list"></i><a href="review_history.php?page=1">Review History</a></li>
         <li class="<?php if($page == 'review'){echo 'active';} ?>"><i class="fas fa-calculator"></i><a href="review.php">Add review</a></li>
         </ul>
         <ul class="delete">
