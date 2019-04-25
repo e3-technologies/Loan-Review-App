@@ -21,12 +21,12 @@
                 <div class="user-statistic">
                   <i data-feather="briefcase"></i>
                   <h3>12</h3>
-                  <span>Applied Jobs</span>
+                  <span>Offer Accepted</span>
                 </div>
                 <div class="user-statistic">
-                  <i data-feather="heart"></i>
+                  <i data-feather="pie-chart"></i>
                   <h3>32</h3>
-                  <span>Favourite Jobs</span>
+                  <span>Lenders Compared</span>
                 </div>
               </div>
               <!-- <div class="dashboard-section dashboard-view-chart">

@@ -10,6 +10,7 @@ if (isset($_POST['reviewed'])) {
     $noe = $_POST['noe'];
     $principal_amount = $_POST['principalAmount'];
     $tenor = $_POST['tenor'];
+    $frequency = $_POST['frequency'];
     $repayment_amount = $_POST['repaymentAmount'];
     $repayment_date = $_POST['repaymentDate'];
     $repayment_instrument = $_POST['repaymentInstrument'];
@@ -24,12 +25,15 @@ if (isset($_POST['reviewed'])) {
 
 
     // Update users table
-    $sql = "INSERT INTO review (user_id, amount_given, amount_payback, percent, loan_company, duration, instrument, loan_type, customer_type)
-    VALUES ('$user_id', '$principal_amount', '$repayment_amount', '$intrest_percentage', '$lender', $tenor, '$repayment_instrument',
+    $sql = "INSERT INTO review (user_id, amount_given, amount_payback, percent, loan_company, duration, frequency, instrument, loan_type, customer_type)
+    VALUES ('$user_id', '$principal_amount', '$repayment_amount', '$intrest_percentage', '$lender', '$tenor', '$frequency', '$repayment_instrument',
     '$loan_type', '$noe')";
     $result = mysqli_query($con, $sql);
 
     if ($result) {
+
+        $last_id = mysqli_insert_id($con);
+        $_SESSION['last_id'] = $last_id;
 
         echo "yes";
         exit;
@@ -37,4 +41,33 @@ if (isset($_POST['reviewed'])) {
         echo "tt";
     }
 
+}
+
+
+if (isset($_POST['submit'])) {
+    $filename = $_FILES['offer_letter']['name'];
+    $last_id = $_POST['last_id'];
+
+    // Check if file is pdf
+    $extension = pathinfo($filename, PATHINFO_EXTENSION);
+    if($extension != 'pdf'){
+        echo "<script>alert('File have to be PDF');</script>";
+    } else {
+
+        $pdf_loc = $_FILES['offer_letter']['tmp_name'];
+        $folder="../uploads/";
+
+        // Update into db
+        $query = " UPDATE review SET offer_letter='$filename' WHERE id='$last_id'";
+        $offer = mysqli_query($con, $query);
+        if ($offer) {
+
+          // store file
+          move_uploaded_file($pdf_loc,$folder.$filename);
+
+          echo "<script>alert('Successful2!!'); window.location='../account/result.php'</script>";
+        } else {
+          echo "Error: " . $query . "<br>" . $con->error;
+        }
+    }
 }

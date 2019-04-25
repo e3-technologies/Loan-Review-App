@@ -55,10 +55,8 @@
                                 <div class="input-field">
                                     <select id="loanType" required>
                                         <option></option>
-                                        <option value="1">1 time payment</option>
-                                        <option value="2">2 Months</option>
-                                        <option value="3">3 Months</option>
-                                        <option value="4">4 Months</option>
+                                        <option value="personal">Personal Loan</option>
+                                        <option value="business">Business Loan</option>
                                     </select>
                                     <label>Loan Type</label>
                                 </div>
@@ -139,6 +137,16 @@
                                     <label>Tenor</label>
                                 </div>
 
+                                <div class="input-field">
+                                    <select id="frequency" class="validate" data-parsley-required-message="Frequency is required" required>
+                                        <option></option>
+                                        <option value="once">One Time Payment</option>
+                                        <option value="monthly">Monthly</option>
+                                        <option value="yearly">Yearly</option>
+                                    </select>
+                                    <label>Frequencies</label>
+                                </div>
+
                                 <div class="input-field col s12">
                                     <button type="submit" class="btn waves-effect waves-light full-width">Next</button>
                                 </div>
@@ -210,7 +218,12 @@
                                 <br>
 
                                 <div class="input-field">
-                                    <input id="repaymentInstrument" type="text" class="validate" data-parsley-required-message="Repayment instrument is required" placeholder="Bank Transfer" required>
+                                    <select id="repaymentInstrument" required>
+                                        <option></option>
+                                        <option value="bank payment">Bank Payment</option>
+                                        <option value="online transfer">Online Transfer</option>
+                                        <option value="Cheque">Cheque</option>
+                                    </select>
                                     <label>Repayment Instrument</label>
                                 </div>
 
@@ -235,17 +248,17 @@
                                 <br>
 
                                 <div class="rating">
-                                    <i id="sone" class="fa fa-star fa-2x"></i>
-                                    <i id="stwo" class="fa fa-star fa-2x"></i>
-                                    <i id="sthree" class="fa fa-star fa-2x"></i>
-                                    <i id="sfour" class="fa fa-star fa-2x"></i>
-                                    <i id="sfive" class="fa fa-star fa-2x"></i>
+                                    <img id="sone" src="../assets/icon/crying-1.png">
+                                    <img id="stwo" src="../assets/icon/angry-1.png">
+                                    <img id="sthree" src="../assets/icon/sad-1.png">
+                                    <img id="sfour" src="../assets/icon/happy-1.png">
+                                    <img id="sfive" src="../assets/icon/lol-1.png">
                                 </div>
 
                                 <input type="hidden" id="rate1">
 
                                 <div class="input-field col s12">
-                                    <button type="submit" class="btn waves-effect waves-light full-width">Next</button>
+                                    <button type="submit" id="srate" disabled class="btn waves-effect waves-light full-width">Next</button>
                                 </div>
 
                                 <center>
@@ -263,18 +276,18 @@
                                 <br>
 
                                 <div class="rating2">
-                                    <i id="Xone" class="fa fa-star fa-2x"></i>
-                                    <i id="Xtwo" class="fa fa-star fa-2x"></i>
-                                    <i id="Xthree" class="fa fa-star fa-2x"></i>
-                                    <i id="Xfour" class="fa fa-star fa-2x"></i>
-                                    <i id="Xfive" class="fa fa-star fa-2x"></i>
+                                    <img id="Xone" src="../assets/icon/crying-1.png">
+                                    <img id="Xtwo" src="../assets/icon/angry-1.png">
+                                    <img id="Xthree" src="../assets/icon/sad-1.png">
+                                    <img id="Xfour" src="../assets/icon/happy-1.png">
+                                    <img id="Xfive" src="../assets/icon/lol-1.png">
                                 </div>
 
                                 <input type="hidden" id="rate2">
 
 
                                 <div class="input-field col s12">
-                                    <button type="submit" class="btn waves-effect waves-light full-width">Next</button>
+                                    <button type="submit" id="Xrate" disabled class="btn waves-effect waves-light full-width">Next</button>
                                 </div>
 
                                 <center>
@@ -292,11 +305,11 @@
                                 <br>
 
                                 <div class="rating3">
-                                    <i id="Kone" class="fa fa-star fa-2x"></i>
-                                    <i id="Ktwo" class="fa fa-star fa-2x"></i>
-                                    <i id="Kthree" class="fa fa-star fa-2x"></i>
-                                    <i id="Kfour" class="fa fa-star fa-2x"></i>
-                                    <i id="Kfive" class="fa fa-star fa-2x"></i>
+                                    <img id="Kone" src="../assets/icon/crying-1.png">
+                                    <img id="Ktwo" src="../assets/icon/angry-1.png">
+                                    <img id="Kthree" src="../assets/icon/sad-1.png">
+                                    <img id="Kfour" src="../assets/icon/happy-1.png">
+                                    <img id="Kfive" src="../assets/icon/lol-1.png">
                                 </div>
 
                                 <input type="hidden" id="rate3">
@@ -305,7 +318,7 @@
                                 <input type="hidden" id="reviewed" value="reviewed">
 
                                 <div class="input-field col s12">
-                                    <button id="submitReview" type="submit" class="btn waves-effect waves-light full-width">Submit</button>
+                                    <button id="Krate" disabled type="submit" class="btn waves-effect waves-light full-width">Submit</button>
                                 </div>
 
                                 <center>
@@ -329,7 +342,6 @@
     <div id="SuccessStep" class="container" hidden>
         <div class="row">
             <center>
-                <!-- <img class="logo-login" src="../walletassets/img/logo-login.png" srcset="/walletassets/img/logo-login@2x.png 2x"> -->
                 <div class="general-card card login-card">
                     <div class="row">
                         <center><img src="../walletassets/img/walletCreatedIcon.svg"></center>
@@ -356,7 +368,6 @@
     <script src="../assets/vendor/newassets/js/jquery.mask.js"></script>
     <script src="../assets/vendor/Scripts/parsley.min.js"></script>
     <script src="../assets/vendor/Scripts/preview.js"></script>
-    <!-- <script src="../vendor/Scripts/freshchat.js"></script> -->
 
     <script type="text/javascript">
 

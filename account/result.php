@@ -17,7 +17,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Oficiona</title>
+    <title>Loan App</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../assets/account/assets/css/bootstrap.min.css">
@@ -71,7 +71,7 @@
 
                  <div class="col-6 text-center">
                     <p>Your loan offer is</p>
-                    <h3>60%</h3>
+                    <h3><?= loanSafety2() ?>%</h3>
                     <span class="name">Fairly good offer!</span>
                     <p>you many need to check out Lenders with more seamless appliocation process and more excellent customer service</p>
 
@@ -95,11 +95,11 @@
                     <tbody>
                       <tr>
                         <td>Principal amount</td>
-                        <td>₦<?= number_format($row['amount_given']) ?></td>
+                        <td>₦<?= number_format($row['amount_given']).'.00' ?></td>
                       </tr>
                        <tr>
                         <td>Repayment amount</td>
-                        <td>₦<?= number_format($row['amount_payback']) ?></td>
+                        <td>₦<?= number_format($row['amount_payback']).'.00' ?></td>
                       </tr>
                        <tr>
                         <td>Debt-to-income</td>
@@ -120,23 +120,23 @@
                       </tr>
                       <tr>
                         <td>Loan life rate</td>
-                        <td>46.64%</td>
+                        <td><?= round(($row['percent']), 1) ?>%</td>
                       </tr>
                       <tr>
                         <td>Repayment frquently</td>
-                        <td>Monthly</td>
+                        <td><?= ucwords($row['frequency']) ?></td>
                       </tr>
                       <tr>
                         <td>Customer type</td>
-                        <td><?= $row['customer_type'] ?></td>
+                        <td><?= ucwords($row['customer_type']) ?></td>
                       </tr>
                       <tr>
                         <td>Loan type</td>
-                        <td>Loan Type</td>
+                        <td><?= ucwords($row['loan_type']) ?></td>
                       </tr>
                       <tr>
                         <td>Instrument</td>
-                        <td><?= $row['instrument'] ?></td>
+                        <td><?= ucwords($row['instrument']) ?></td>
                       </tr>
 
                     </tbody>

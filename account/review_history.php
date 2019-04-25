@@ -30,7 +30,7 @@
                     </div>
                     <div class="body">
                       <div class="content">
-                        <h4><a href="job-details.html"><?= $rw['loan_company'] ?></a></h4>
+                        <h4><a href="details.php?id=<?php echo$rw['id'] ?>"><?= $rw['loan_company'] ?></a></h4>
                         <div class="info">
                             <span class="company"><a href="#"><i data-feather="briefcase"></i>₦<?= number_format($rw['amount_given']) ?></a></span>
                           <span class="office-location"><a href="#"><i data-feather="map-pin"></i><?= round($rw['percent'],1); ?>%</a></span>
@@ -43,7 +43,7 @@
                           <a href="#" class="favourite"><i data-feather="heart"></i></a>
                         </div>
                         <a href="details.php?id=<?php echo$rw['id'] ?>" class="bookmark-remove"><i class="fas fa-eye"></i></a>
-                        <p class="deadline"></p>
+                        <!-- <p class="deadline">Deadline: <?= $rw['date']; ?></p> -->
                       </div>
                     </div>
                   </div>
@@ -56,8 +56,9 @@
                 <div class="pagination-list text-center">
                   <nav class="navigation pagination">
                     <div class="nav-links">
-                      <a class="prev page-numbers" href="#"><i class="fas fa-angle-left"></i></a>
+                      <!-- <a class="prev page-numbers" href="#"><i class="fas fa-angle-left"></i></a> -->
 
+                        <!-- PAGINATION -->
                         <?php for ($i=1; $i <= $paginate; $i++) : ?>
                             <?php if ($i == $_GET['page']) : ?>
                                 <a class="page-numbers current" href="review_history.php?page=<?= $i; ?>"><?= $i; ?></a>
@@ -67,8 +68,9 @@
                                 <a class="page-numbers" href="review_history.php?page=<?= $i; ?>"><?= $i; ?></a>
                             <?php endif; ?>
                         <?php endfor; ?>
+                        <!-- END PAGINATION -->
 
-                          <a class="next page-numbers" href="#"><i class="fas fa-angle-right"></i></a>
+                          <!-- <a class="next page-numbers" href="#"><i class="fas fa-angle-right"></i></a> -->
                         </div>
                       </nav>
                     </div>
@@ -76,7 +78,7 @@
 
 
             <?php else: ?>
-                <h4><a href="job-details.html">No Result Found</a></h4>
+                <h4>No Result Found</a></h4>
             <?php endif; ?>
 
                 </div>

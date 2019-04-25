@@ -3,7 +3,7 @@ $(document).ready(function() {
     $("select").material_select();
 
     // for date of first repayment
-    $("#repaymentDate").mask("00/00/0000");
+    $("#repaymentDate").mask("0000-00-00");
 
     //---------- form --------------//
     $("#step1").parsley();
@@ -130,6 +130,7 @@ $(document).ready(function() {
         $("#step9").removeAttr("hidden");
     });
 
+
 // ====================================================== //
 
     // --------- For new or Existing client ----------- //
@@ -140,7 +141,7 @@ $(document).ready(function() {
         $("#newCstm").attr("disabled", "disabled");
         $("#existing").removeAttr("disabled");
         $("#next").removeAttr("disabled");
-        noe.value = "newValue";
+        noe.value = "new";
     });
 
 
@@ -157,47 +158,52 @@ $(document).ready(function() {
     var rate1 = document.querySelector("#rate1");
 
     $("#sone").click(function() {
-        $("#sone").addClass("checked");
-        $("#stwo").removeClass("checked");
-        $("#sthree").removeClass("checked");
-        $("#sfour").removeClass("checked");
-        $("#sfive").removeClass("checked");
+        $("#sone").attr("src", "../assets/icon/crying.png");
+        $("#stwo").attr("src", "../assets/icon/angry-1.png");
+        $("#sthree").attr("src", "../assets/icon/sad-1.png");
+        $("#sfour").attr("src", "../assets/icon/happy-1.png");
+        $("#sfive").attr("src", "../assets/icon/lol-1.png");
+        $("#srate").removeAttr("disabled");
         rate1.value = 1;
     });
 
     $("#stwo").click(function() {
-        $("#sone").addClass("checked");
-        $("#stwo").addClass("checked");
-        $("#sthree").removeClass("checked");
-        $("#sfour").removeClass("checked");
-        $("#sfive").removeClass("checked");
+        $("#sone").attr("src", "../assets/icon/crying-1.png");
+        $("#stwo").attr("src", "../assets/icon/angry.png");
+        $("#sthree").attr("src", "../assets/icon/sad-1.png");
+        $("#sfour").attr("src", "../assets/icon/happy-1.png");
+        $("#sfive").attr("src", "../assets/icon/lol-1.png");
+        $("#srate").removeAttr("disabled");
         rate1.value = 2;
     });
 
     $("#sthree").click(function() {
-        $("#sone").addClass("checked");
-        $("#stwo").addClass("checked");
-        $("#sthree").addClass("checked");
-        $("#sfour").removeClass("checked");
-        $("#sfive").removeClass("checked");
+        $("#sone").attr("src", "../assets/icon/crying-1.png");
+        $("#stwo").attr("src", "../assets/icon/angry-1.png");
+        $("#sthree").attr("src", "../assets/icon/sad.png");
+        $("#sfour").attr("src", "../assets/icon/happy-1.png");
+        $("#sfive").attr("src", "../assets/icon/lol-1.png");
+        $("#srate").removeAttr("disabled");
         rate1.value = 3;
     });
 
     $("#sfour").click(function() {
-        $("#sone").addClass("checked");
-        $("#stwo").addClass("checked");
-        $("#sthree").addClass("checked");
-        $("#sfour").addClass("checked");
-        $("#sfive").removeClass("checked");
+        $("#sone").attr("src", "../assets/icon/crying-1.png");
+        $("#stwo").attr("src", "../assets/icon/angry-1.png");
+        $("#sthree").attr("src", "../assets/icon/sad-1.png");
+        $("#sfour").attr("src", "../assets/icon/happy.png");
+        $("#sfive").attr("src", "../assets/icon/lol-1.png");
+        $("#srate").removeAttr("disabled");
         rate1.value = 4;
     });
 
     $("#sfive").click(function() {
-        $("#sone").addClass("checked");
-        $("#stwo").addClass("checked");
-        $("#sthree").addClass("checked");
-        $("#sfour").addClass("checked");
-        $("#sfive").addClass("checked");
+        $("#sone").attr("src", "../assets/icon/crying-1.png");
+        $("#stwo").attr("src", "../assets/icon/angry-1.png");
+        $("#sthree").attr("src", "../assets/icon/sad-1.png");
+        $("#sfour").attr("src", "../assets/icon/happy-1.png");
+        $("#sfive").attr("src", "../assets/icon/lol.png");
+        $("#srate").removeAttr("disabled");
         rate1.value = 5;
     });
 
@@ -206,47 +212,52 @@ $(document).ready(function() {
     var rate2 = document.querySelector("#rate2");
 
     $("#Xone").click(function() {
-        $("#Xone").addClass("checked");
-        $("#Xtwo").removeClass("checked");
-        $("#Xthree").removeClass("checked");
-        $("#Xfour").removeClass("checked");
-        $("#Xfive").removeClass("checked");
+        $("#Xone").attr("src", "../assets/icon/crying.png");
+        $("#Xtwo").attr("src", "../assets/icon/angry-1.png");
+        $("#Xthree").attr("src", "../assets/icon/sad-1.png");
+        $("#Xfour").attr("src", "../assets/icon/happy-1.png");
+        $("#Xfive").attr("src", "../assets/icon/lol-1.png");
+        $("#Xrate").removeAttr("disabled");
         rate2.value = 1;
     });
 
     $("#Xtwo").click(function() {
-        $("#Xone").addClass("checked");
-        $("#Xtwo").addClass("checked");
-        $("#Xthree").removeClass("checked");
-        $("#Xfour").removeClass("checked");
-        $("#Xfive").removeClass("checked");
+        $("#Xone").attr("src", "../assets/icon/crying-1.png");
+        $("#Xtwo").attr("src", "../assets/icon/angry.png");
+        $("#Xthree").attr("src", "../assets/icon/sad-1.png");
+        $("#Xfour").attr("src", "../assets/icon/happy-1.png");
+        $("#Xfive").attr("src", "../assets/icon/lol-1.png");
+        $("#Xrate").removeAttr("disabled");
         rate2.value = 2;
     });
 
     $("#Xthree").click(function() {
-        $("#Xone").addClass("checked");
-        $("#Xtwo").addClass("checked");
-        $("#Xthree").addClass("checked");
-        $("#Xfour").removeClass("checked");
-        $("#Xfive").removeClass("checked");
+        $("#Xone").attr("src", "../assets/icon/crying-1.png");
+        $("#Xtwo").attr("src", "../assets/icon/angry-1.png");
+        $("#Xthree").attr("src", "../assets/icon/sad.png");
+        $("#Xfour").attr("src", "../assets/icon/happy-1.png");
+        $("#Xfive").attr("src", "../assets/icon/lol-1.png");
+        $("#Xrate").removeAttr("disabled");
         rate2.value = 3;
     });
 
     $("#Xfour").click(function() {
-        $("#Xone").addClass("checked");
-        $("#Xtwo").addClass("checked");
-        $("#Xthree").addClass("checked");
-        $("#Xfour").addClass("checked");
-        $("#Xfive").removeClass("checked");
+        $("#Xone").attr("src", "../assets/icon/crying-1.png");
+        $("#Xtwo").attr("src", "../assets/icon/angry-1.png");
+        $("#Xthree").attr("src", "../assets/icon/sad-1.png");
+        $("#Xfour").attr("src", "../assets/icon/happy.png");
+        $("#Xfive").attr("src", "../assets/icon/lol-1.png");
+        $("#Xrate").removeAttr("disabled");
         rate2.value = 4;
     });
 
     $("#Xfive").click(function() {
-        $("#Xone").addClass("checked");
-        $("#Xtwo").addClass("checked");
-        $("#Xthree").addClass("checked");
-        $("#Xfour").addClass("checked");
-        $("#Xfive").addClass("checked");
+        $("#Xone").attr("src", "../assets/icon/crying-1.png");
+        $("#Xtwo").attr("src", "../assets/icon/angry-1.png");
+        $("#Xthree").attr("src", "../assets/icon/sad-1.png");
+        $("#Xfour").attr("src", "../assets/icon/happy-1.png");
+        $("#Xfive").attr("src", "../assets/icon/lol.png");
+        $("#Xrate").removeAttr("disabled");
         rate2.value = 5;
     });
 
@@ -255,47 +266,52 @@ $(document).ready(function() {
     var rate3 = document.querySelector("#rate3");
 
     $("#Kone").click(function() {
-        $("#Kone").addClass("checked");
-        $("#Ktwo").removeClass("checked");
-        $("#Kthree").removeClass("checked");
-        $("#Kfour").removeClass("checked");
-        $("#Kfive").removeClass("checked");
+        $("#Kone").attr("src", "../assets/icon/crying.png");
+        $("#Ktwo").attr("src", "../assets/icon/angry-1.png");
+        $("#Kthree").attr("src", "../assets/icon/sad-1.png");
+        $("#Kfour").attr("src", "../assets/icon/happy-1.png");
+        $("#Kfive").attr("src", "../assets/icon/lol-1.png");
+        $("#Krate").removeAttr("disabled");
         rate3.value = 1;
     });
 
     $("#Ktwo").click(function() {
-        $("#Kone").addClass("checked");
-        $("#Ktwo").addClass("checked");
-        $("#Kthree").removeClass("checked");
-        $("#Kfour").removeClass("checked");
-        $("#Kfive").removeClass("checked");
+        $("#Kone").attr("src", "../assets/icon/crying-1.png");
+        $("#Ktwo").attr("src", "../assets/icon/angry.png");
+        $("#Kthree").attr("src", "../assets/icon/sad-1.png");
+        $("#Kfour").attr("src", "../assets/icon/happy-1.png");
+        $("#Kfive").attr("src", "../assets/icon/lol-1.png");
+        $("#Krate").removeAttr("disabled");
         rate3.value = 2;
     });
 
     $("#Kthree").click(function() {
-        $("#Kone").addClass("checked");
-        $("#Ktwo").addClass("checked");
-        $("#Kthree").addClass("checked");
-        $("#Kfour").removeClass("checked");
-        $("#Kfive").removeClass("checked");
+        $("#Kone").attr("src", "../assets/icon/crying-1.png");
+        $("#Ktwo").attr("src", "../assets/icon/angry-1.png");
+        $("#Kthree").attr("src", "../assets/icon/sad.png");
+        $("#Kfour").attr("src", "../assets/icon/happy-1.png");
+        $("#Kfive").attr("src", "../assets/icon/lol-1.png");
+        $("#Krate").removeAttr("disabled");
         rate3.value = 3;
     });
 
     $("#Kfour").click(function() {
-        $("#Kone").addClass("checked");
-        $("#Ktwo").addClass("checked");
-        $("#Kthree").addClass("checked");
-        $("#Kfour").addClass("checked");
-        $("#Kfive").removeClass("checked");
+        $("#Kone").attr("src", "../assets/icon/crying-1.png");
+        $("#Ktwo").attr("src", "../assets/icon/angry-1.png");
+        $("#Kthree").attr("src", "../assets/icon/sad-1.png");
+        $("#Kfour").attr("src", "../assets/icon/happy.png");
+        $("#Kfive").attr("src", "../assets/icon/lol-1.png");
+        $("#Krate").removeAttr("disabled");
         rate3.value = 4;
     });
 
     $("#Kfive").click(function() {
-        $("#Kone").addClass("checked");
-        $("#Ktwo").addClass("checked");
-        $("#Kthree").addClass("checked");
-        $("#Kfour").addClass("checked");
-        $("#Kfive").addClass("checked");
+        $("#Kone").attr("src", "../assets/icon/crying-1.png");
+        $("#Ktwo").attr("src", "../assets/icon/angry-1.png");
+        $("#Kthree").attr("src", "../assets/icon/sad-1.png");
+        $("#Kfour").attr("src", "../assets/icon/happy-1.png");
+        $("#Kfive").attr("src", "../assets/icon/lol.png");
+        $("#Krate").removeAttr("disabled");
         rate3.value = 5;
     });
 
@@ -311,6 +327,7 @@ $(document).ready(function() {
             noe: $("#noe").val(),
             principalAmount: $("#principalAmount").val(),
             tenor: $("#tenor").val(),
+            frequency: $("#frequency").val(),
             repaymentAmount: $("#repaymentAmount").val(),
             repaymentDate: $("#repaymentDate").val(),
             repaymentInstrument: $("#repaymentInstrument").val(),
@@ -327,7 +344,7 @@ $(document).ready(function() {
             type: "POST",
             success: function (res) {
                 if (res == 'yes') {
-                    window.location.href='../account/result.php';
+                    window.location.href='../account/offer_letter.php';
                     // alert(res);
                 }
             },

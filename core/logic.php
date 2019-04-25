@@ -126,9 +126,9 @@ function allReview() {
     if (isset($_GET['page'])) {
         $page = $_GET['page'];
         $start = ($page * 3) - 3;
-        $sql = "SELECT * FROM review WHERE user_id = '$user_id' LIMIT $start, 3  ";
+        $sql = "SELECT * FROM review WHERE user_id = '$user_id' ORDER BY id desc LIMIT $start, 3 ";
     } else {
-        $sql = "SELECT * FROM review WHERE user_id = '$user_id' LIMIT 0, 3 ";
+        $sql = "SELECT * FROM review WHERE user_id = '$user_id' ORDER BY id desc LIMIT 0, 3 ORDER";
     }
         $result = mysqli_query($con, $sql);
         return $result;
@@ -158,9 +158,9 @@ function reviewPagination() {
 
 
 /**
- * Get signle review by user
+ * Get signle review details by user
  */
-function revieDetails() {
+function reviewDetails() {
     global $con;
 
     $id = $_GET['id'];
@@ -171,6 +171,80 @@ function revieDetails() {
     return $info;
 }
 
+/**
+ * Calculate loan based on income
+ * And rate if its advisable
+ */
+function loanSafety() {
+    // Get principal amount
+    $row = reviewDetails();
+    // Get user net_pay
+    $net_pay = netPay($row['user_id']);
+    // Calc loan to income percentage
+    $rate = round(($row['amount_given'] * 100)/ $net_pay, 2);
+
+    // Calc the score for the loan
+    switch ($rate) {
+        case $rate <= 40:
+            echo 100;
+            break;
+        case $rate > 40 && $rate < 46:
+            echo 75;
+            break;
+        case $rate >= 45 && $rate < 51:
+            echo 65;
+            break;
+        case $rate >= 51 && $rate < 56:
+            echo 55;
+            break;
+        case $rate >= 56 && $rate < 61:
+            echo 45;
+            break;
+        case $rate > 60:
+            echo 20;
+            break;
+        default:
+            echo "Error";
+    }
+}
+
+/**
+ * Calculate loan based on income
+ * And rate if its advisable
+ * This one is for after reviewing a loan
+ */
+function loanSafety2() {
+    // Get principal amount
+    $row = rev();
+    // Get user net_pay
+    $net_pay = netPay($row['user_id']);
+    // Calc loan to income percentage
+    $rate = round(($row['amount_given'] * 100)/ $net_pay, 2);
+
+    // Calc the score for the loan
+    switch ($rate) {
+        case $rate <= 40:
+            echo 100;
+            break;
+        case $rate > 40 && $rate < 46:
+            echo 75;
+            break;
+        case $rate >= 45 && $rate < 51:
+            echo 65;
+            break;
+        case $rate >= 51 && $rate < 56:
+            echo 55;
+            break;
+        case $rate >= 56 && $rate < 61:
+            echo 45;
+            break;
+        case $rate > 60:
+            echo 20;
+            break;
+        default:
+            echo "Error";
+    }
+}
 
 function ReviewInfo() {
     global $con;
@@ -183,8 +257,17 @@ function ReviewInfo() {
     $result = mysqli_query($con, $sql);
     $row = $result->fetch_assoc();
     return $row;
+
+
 }
 
+// =========== Add Review Stats ===============//
+
+function FunctionName($value=''){
+    global $con;
+
+
+}
 
 // ------------- lga  --------------//
 // use the id of selected state to get LGA

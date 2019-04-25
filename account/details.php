@@ -4,7 +4,7 @@
     confirm_login();
 
     // review details
-    $row = revieDetails();
+    $row = reviewDetails();
     // Get net pay
     $user = netPay($row['user_id']);
 ?>
@@ -71,7 +71,7 @@
 
                  <div class="col-6 text-center">
                     <p>Your loan offer is</p>
-                    <h3>60%</h3>
+                    <h3><?= loanSafety() ?>%</h3>
                     <span class="name">Fairly good offer!</span>
                     <p>you many need to check out Lenders with more seamless appliocation process and more excellent customer service</p>
 
@@ -95,11 +95,11 @@
                     <tbody>
                       <tr>
                         <td>Principal amount</td>
-                        <td>₦<?= number_format($row['amount_given']) ?></td>
+                        <td>₦<?= number_format($row['amount_given']).'.00' ?></td>
                       </tr>
                        <tr>
                         <td>Repayment amount</td>
-                        <td>₦<?= number_format($row['amount_payback']) ?></td>
+                        <td>₦<?= number_format($row['amount_payback']).'.00' ?></td>
                       </tr>
                        <tr>
                         <td>Debt-to-income</td>
@@ -112,7 +112,7 @@
 
                       <tr>
                         <td>Total repayment</td>
-                        <td>₦268,000.02</td>
+                        <td>₦<?= number_format($row['amount_payback']).'.00' ?></td>
                       </tr>
                       <tr>
                         <td>Montly rate</td>
@@ -120,23 +120,23 @@
                       </tr>
                       <tr>
                         <td>Loan life rate</td>
-                        <td>46.64%</td>
+                        <td><?= round($row['percent'], 1) ?>%</td>
                       </tr>
                       <tr>
                         <td>Repayment frquently</td>
-                        <td>Monthly</td>
+                        <td><?= ucwords($row['frequency']) ?></td>
                       </tr>
                       <tr>
                         <td>Customer type</td>
-                        <td><?= $row['customer_type'] ?></td>
+                        <td><?= ucwords($row['customer_type']) ?></td>
                       </tr>
                       <tr>
                         <td>Loan type</td>
-                        <td>Loan Type</td>
+                        <td><?= ucwords($row['loan_type']) ?></td>
                       </tr>
                       <tr>
                         <td>Instrument</td>
-                        <td><?= $row['instrument'] ?></td>
+                        <td><?= ucwords($row['instrument']) ?></td>
                       </tr>
 
                     </tbody>
