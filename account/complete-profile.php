@@ -215,7 +215,7 @@
                                     </div>
 
                                     <div class="input-field">
-                                        <input id="net_pay" type="number" required>
+                                        <input id="net_pay" type="text" data-type="currency" required>
                                         <label>Net pay(Salary)</label>
                                     </div>
 
@@ -325,6 +325,7 @@
     <script src="../assets/vendor/newassets/js/jquery.mask.js"></script>
     <script src="../assets/vendor/Scripts/parsley.min.js"></script>
     <script src="../assets/vendor/Scripts/auth.js"></script>
+    <script src="../assets/vendor/Scripts/script.js"></script>
 
     <script type="text/javascript">
 

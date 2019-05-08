@@ -75,7 +75,6 @@
                                 <input id="noe" type="hidden" required>
                                 <br><br>
                                 <div class="alert alert-info">
-                                    <?php// $row = mysqli_fetch_assoc($review_result); ?>
                                         <h5>Industry Statistics </h5>
                                         <p>Based on your profile, proportion of existing customers to total customers on paylatter is 45%</p>
                                 </div>
@@ -97,7 +96,9 @@
                             <h5>PRINCIPAL AMOUNT</h5>
                                 <p class="text-center">Please enter the principal amount given.</p>
                                 <div class="input-field">
-                                    <input id="principalAmount" type="number" class="validate" data-parsley-required-message="Principal Amount is required" required>
+                                    <!-- <input class="principalAmount" type="number" id="currency-field" data-type="currency" placeholder="1,000,000.00" data-parsley-required-message="Principal Amount is required" required> -->
+                                    <input type="text" id="principalAmount" data-type="currency" placeholder="1,000,000.00" required>
+
                                     <label>Principal Amount</label>
                                 </div>
 
@@ -168,7 +169,7 @@
                                 <div class="input-field">
 
                                     <div class="input-field">
-                                        <input id="repaymentAmount" type="number" class="validate" data-parsley-required-message="Repayment Amount is required" required>
+                                        <input id="repaymentAmount" type="text" data-type="currency" class="validate" data-parsley-required-message="Repayment Amount is required" required>
                                         <label>Repayment Amount</label>
                                     </div>
 
@@ -368,6 +369,7 @@
     <script src="../assets/vendor/newassets/js/jquery.mask.js"></script>
     <script src="../assets/vendor/Scripts/parsley.min.js"></script>
     <script src="../assets/vendor/Scripts/preview.js"></script>
+    <script src="../assets/vendor/Scripts/script.js"></script>
 
     <script type="text/javascript">
 

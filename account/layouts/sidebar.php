@@ -7,7 +7,6 @@
 		</div>
 		<div class="user-body">
 			<h5><?php echo $_SESSION['name'] ?></h5>
-			<!-- <span><?php// echo $row['occupation'] ?></span> -->
 		</div>
 	</div>
 	<div class="profile-progress">
