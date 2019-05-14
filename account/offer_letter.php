@@ -41,7 +41,7 @@
                                     <br>
                                 <div class="input-field">
                                     <input type="file" name="offer_letter" required>
-                                    <input type="text" name="last_id" value="<?= $_SESSION['last_id']; ?>">
+                                    <input type="text" name="last_id" value="<?= $_SESSION['last_id']; ?>" hidden>
                                 </div>
                                 <div class="input-field col s12">
                                     <button type="submit" name="submit" class="btn waves-effect waves-light full-width">Submit</button>
