@@ -20,8 +20,14 @@ if (isset($_POST['reviewed'])) {
     $user_id = $_SESSION['id'];
 
     // Calculate loan percentage
-    $interest = $repayment_amount - $principal_amount;
-    $intrest_percentage = ($interest * 100) / $principal_amount;
+    // $interest = $repayment_amount - $principal_amount;
+    // $intrest_percentage = ($interest * 100) / $principal_amount;
+
+    /**
+     * JOHN'S LOAN LIFE RATE FORMULAR
+     * (((repayment_amt * loan_duration)-loan_amt)/loan_amt)*100
+     */
+    $intrest_percentage = ((($repayment_amount * $tenor)- $principal_amount)/ $principal_amount)* 100;
 
 
     // Update users table

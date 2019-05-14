@@ -112,7 +112,7 @@
 
                       <tr>
                         <td>Total repayment</td>
-                        <td>₦268,000.02</td>
+                        <td>₦<?= $row['amount_payback'] *  $row['duration']?></td>
                       </tr>
                       <tr>
                         <td>Montly rate</td>

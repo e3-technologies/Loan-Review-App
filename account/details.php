@@ -112,7 +112,7 @@
 
                       <tr>
                         <td>Total repayment</td>
-                        <td>₦<?= number_format($row['amount_payback']).'.00' ?></td>
+                        <td>₦<?= $row['amount_payback'] * $row['duration']?></td>
                       </tr>
                       <tr>
                         <td>Montly rate</td>
