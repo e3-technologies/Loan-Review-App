@@ -13,5 +13,5 @@ the offer is fare and it also runs it with your salary to see if it is advisable
 
 ## Authors
 
-* Emmanuel Okeke ([@iimmaannuueell](https://github.com/iimmaannuueell))
+* Emmanuel Okeke ([@iimmaannuueell](https://github.com/iimmaannuueel))
 * Aboajah Emmanuel ([@mannye3](https://github.com/mannye3))
